@@ -1,8 +1,13 @@
 package com.prueba.web.models;
 
-import org.springframework.data.annotation.Id;
+//import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
-
+/*
+@Data
+@ToString(exclude = "password")
+@Entity
+*/
 @Document(collection = "users")
 public class User {
 	
@@ -13,17 +18,19 @@ public class User {
 	String city;
 	String phone;
 	String email;
+	String password;
 	
 	public User() {		
 	}
 	
 	
-	public User(String name, String address, String city, String phone, String email) {
+	public User(String name, String address, String city, String phone, String email, String password) {
 		this.name = name;
 		this.address = address;
 		this.city = city;
 		this.phone = phone;
-		this.email = email;		
+		this.email = email;	
+		this.password = password;
 	}
 	
 	public String getId() {
@@ -73,4 +80,14 @@ public class User {
 	public void setEmail(String email) {
 		this.email=email;
 	}
+	
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password=password;
+	}
+	
 }
