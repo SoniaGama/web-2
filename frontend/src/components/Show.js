@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
+//button salir path :/
+
 class Show extends Component {
 	
 	constructor(props){
@@ -19,13 +21,13 @@ class Show extends Component {
 				console.log(this.state.user);
 			});
 	}
-	
+	/*
 	delete(id){
 		console.log(id);
 		axios.delete('/users/' + id)
 			.then(result => this.props.history.push("/"));
 	}
-	
+	*/
 	render(){
 		return(
 				<div class="container">
@@ -59,8 +61,8 @@ class Show extends Component {
 							</dl>
 							
 							<Link to={`/edit/${this.state.user.id}`} class="btn btn-success">Edit</Link>
-							<button onClick={this.delete.bind(this, this.state.user.id)} class="btn btn-danger">Delete</button>
-							
+							//<button onClick={this.delete.bind(this, this.state.user.id)} class="btn btn-danger">Delete</button>
+							<button><Link to='/'>Salir</Link></button>//cerrar sesion
 						</div>						
 						
 					</div>				

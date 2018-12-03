@@ -44,7 +44,7 @@ public class UserController{
 			one.setEmail(user.getEmail());
 		
 		userRepository.save(one);
-		return one;	
+		return one;	//regresa a la vista ./show
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/users/{id}")

@@ -7,7 +7,8 @@ import './App.css';
 import Edit from './components/Edit';
 import Create from './components/Create';
 import Show from './components/Show';
-
+import Notification from './components/NotificationUser';
+import LogIn from './components/LogIn';
 
 ReactDOM.render(		
 		<Router>
@@ -16,6 +17,8 @@ ReactDOM.render(
 				<Route path='/edit/:id' component={Edit} />
 				<Route path='/create' component={Create} />
 				<Route path='/show/:id' component={Show} />
+				<Route path ='/notificationUser' component={Notification} />"
+				<Route path = '/logIn' component={LogIn} />
 			</div>
 		</Router>,
 		document.getElementById('root')

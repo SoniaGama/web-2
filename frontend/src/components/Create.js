@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
+//link to notification "usuaro registrado" .js component
+//link to LogIn
+
 class Create extends Component {
 	constructor(){
 		super();
@@ -52,7 +55,7 @@ class Create extends Component {
 							</div>
 							
 							<div class="panel-body">
-								<h4><Link to='/'>Users List</Link></h4>
+								//<h4><Link to='/'>Users List</Link></h4>
 								<form onSubmit={this.onSubmit}>
 								
 									<div class="form-group">										
@@ -80,7 +83,8 @@ class Create extends Component {
 										<input type="text" class="form-control" name="email" value={email} id="email" onChange={this.onChange} placeholder="Email"/>
 									</div>
 										
-									<button type="submit" class="btn btn-default">Submit</button>
+									<button type="submit" class="btn btn-default"><Link to='/notificationUser'>Submit</Link></button>
+									<button><Link to='/'>Salir</Link></button>
 								</form>
 							</div>
 							

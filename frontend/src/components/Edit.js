@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
+//button salir path path ./
+
 class Edit extends Component {
 	
 	constructor(props){
@@ -47,7 +49,7 @@ class Edit extends Component {
 					</div>
 					
 					<div class="panel-body">
-						<h4><Link to={`/show/${this.state.user.id}`}>User List</Link></h4>
+						//<h4><Link to={`/show/${this.state.user.id}`}>User List</Link></h4>
 						
 						<form onSubmit={this.onSubmit}>
 						
@@ -77,7 +79,7 @@ class Edit extends Component {
 							</div>
 								
 							<button type="submit" class="btn btn-default">Update User</button>
-						
+							<button><Link to='/'>Salir</Link></button>
 						</form>
 						
 					</div>

@@ -1,7 +1,6 @@
 package com.prueba.web.models;
 
 //import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 /*
 @Data
@@ -9,30 +8,34 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Entity
 */
 @Document(collection = "users")
-public class User {
+public class User{
 	
-	@Id
-	String id;
-	String name;
+	
+	//private @Id @GeneratedValue Long id;
+	private String name;
 	String address;
 	String city;
 	String phone;
 	String email;
 	String password;
+	// @JsonIgnore String password;
+	//private String[] roles;
 	
 	public User() {		
 	}
 	
 	
-	public User(String name, String address, String city, String phone, String email, String password) {
+	public User(String name, String address, String city, String phone, String email, String password/*, String... roles*/) {
 		this.name = name;
 		this.address = address;
 		this.city = city;
 		this.phone = phone;
 		this.email = email;	
 		this.password = password;
+		//this.setPassword(password);
+		//this.roles = roles;
 	}
-	
+	/*
 	public String getId() {
 		return id;
 	}
@@ -40,7 +43,7 @@ public class User {
 	public void setId(String id) {
 		this.id=id;
 	}
-	
+	*/
 	public String getName() {
 		return name;
 	}

@@ -24,6 +24,11 @@ class App extends Component {
     return (
     		
     	<div class="container">
+    		<button class="btn btn-default"><Link to="/logIn">Iniciar Sesión</Link></button>
+    		<button class="btn btn-default"><Link to="/create">Crear Usuario</Link></button>    		
+    	</div>
+    	/*
+    	<div class="container">
           <div class="panel panel-default">
              <div class="panel-heading">
                 <h3 class="panel-title">
@@ -51,6 +56,7 @@ class App extends Component {
               </div>
             </div>
           </div>
+          */
     		  	
     );
   }
