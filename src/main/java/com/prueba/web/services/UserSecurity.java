@@ -10,6 +10,31 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UserSecurity implements UserDetailsService {
+	
+	private final UserRepository repository;
+	
+	@Autowired
+	public UserSecurity(UserRepository repository) {
+		this.repository = repository;
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+		User user = this.repository.findByName(name);
+		return new User(user.getName(), user.getPassword(),
+				AuthorityUtils.createAuthorityList(user.getRoles()));
+	}
+	
+}
+
+
+
+
+
+
+/*
+@Component
+public class UserSecurity implements UserDetailsService {
 	//encontrar y autenticar usuarios
 	@Autowired
 	private UserRepository repository;
@@ -28,3 +53,4 @@ public class UserSecurity implements UserDetailsService {
 	}
 
 }
+*/

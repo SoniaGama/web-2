@@ -1,39 +1,52 @@
 package com.prueba.web.models;
 
-//import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Id; 
 import org.springframework.data.mongodb.core.mapping.Document;
-/*
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import lombok.Data;
+import lombok.ToString;
+
 @Data
 @ToString(exclude = "password")
 @Entity
-*/
 @Document(collection = "users")
 public class User{
 	
-	
-	//private @Id @GeneratedValue Long id;
+	public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
+	private @Id @GeneratedValue Long id;
 	private String name;
-	String address;
-	String city;
-	String phone;
-	String email;
-	String password;
-	// @JsonIgnore String password;
-	//private String[] roles;
+	//String address;
+	//String city;
+	//String phone;
+	//String email;
+	//String password;
+	private @JsonIgnore String password;
+	private String[] roles;
 	
-	public User() {		
+	
+	/*public User() {		
+	}*/
+	
+	public void setPassword(String password) {
+		this.password = PASSWORD_ENCODER.encode(password);
 	}
 	
+	protected User() {}
 	
-	public User(String name, String address, String city, String phone, String email, String password/*, String... roles*/) {
+	public User(String name,String password, String... roles) {		
+		
 		this.name = name;
-		this.address = address;
-		this.city = city;
-		this.phone = phone;
-		this.email = email;	
-		this.password = password;
-		//this.setPassword(password);
-		//this.roles = roles;
+		//this.address = address;
+		//this.city = city;
+		//this.phone = phone;
+		//this.email = email;	
+		//this.password = password;
+		this.setPassword(password);
+		this.roles = roles;
 	}
 	/*
 	public String getId() {
@@ -43,7 +56,7 @@ public class User{
 	public void setId(String id) {
 		this.id=id;
 	}
-	*/
+	
 	public String getName() {
 		return name;
 	}
@@ -92,5 +105,7 @@ public class User{
 	public void setPassword(String password) {
 		this.password=password;
 	}
+	
+	*/
 	
 }

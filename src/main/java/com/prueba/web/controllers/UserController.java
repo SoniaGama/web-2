@@ -12,10 +12,12 @@ public class UserController{
 	@Autowired
 	UserRepository userRepository;
 	
+	/*
 	@RequestMapping(method=RequestMethod.GET, value="/users")
 	public Iterable<User> user(){
 		return userRepository.findAll();
 	}
+	*/
 	
 	@RequestMapping(method=RequestMethod.POST, value="/users")
 	public User save (@RequestBody User user) {
