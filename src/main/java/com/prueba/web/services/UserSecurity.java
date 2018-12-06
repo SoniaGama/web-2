@@ -1,12 +1,14 @@
 package com.prueba.web.services;
 
-import com.prueba.web.models.User;
-import com.prueba.web.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+
+import com.prueba.web.models.User;
+import com.prueba.web.repositories.UserRepository;
 
 @Component
 public class UserSecurity implements UserDetailsService {
@@ -26,11 +28,6 @@ public class UserSecurity implements UserDetailsService {
 	}
 	
 }
-
-
-
-
-
 
 /*
 @Component
